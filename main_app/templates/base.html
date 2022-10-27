@@ -14,11 +14,12 @@
     <nav>
       <div class="nav-wrapper">
         <ul>
-          <li><a href="/" class="left brand-logo">&nbsp;&nbsp;Grand Canyon Critter Collector</a></li>
+          <li><a href="{% url 'home' %}" class="left brand-logo">&nbsp;&nbsp;Grand Canyon Critter Collector</a></li>
         </ul>
         <ul class="right">
-          <li><a href="/about">About</a></li>
-          <li><a href="/critters">View All My Critters</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'critters_create' %}">Add A Critter</a></li>
+          <li><a href="{% url 'index' %}">View All My Critters</a></li>
         </ul>
       </div>
     </nav>

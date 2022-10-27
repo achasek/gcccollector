@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Critter Details</h1>
+
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">{{ critter.name }}</span>
+    <p>Species: {{ critter.species }}</p>
+    <p>Description: {{ critter.description|linebreaks }}</p>
+    {% if critter.age > 0 %}
+      <p>Age: {{ critter.age }}</p>
+    {% else %}
+      <p>Age: It's just a baby</p>
+    {% endif %}
+  </div>
+  <div class="card-action">
+    <a href="{% url 'critters_update' critter.id %}">Edit</a>
+    <a href="{% url 'critters_delete' critter.id %}">Delete</a>
+  </div>
+</div>
+
+{% endblock %}

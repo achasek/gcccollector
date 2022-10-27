@@ -5,16 +5,18 @@
 
 {% for critter in critters %}
   <div class="card">
+    <a href="{% url 'detail' critter.id %}">
     <div class="card-content">
       <span class="card-title">{{ critter.name }}</span>
       <p>Species: {{ critter.species }}</p>
       <p>Description: {{ critter.description }}</p>
       {% if critter.age > 0 %}
-        <p>Age: {{ cat.age }}</p>
+        <p>Age: {{ critter.age }}</p>
       {% else %}
         <p>Age: It's just a baby</p>
       {% endif %}
     </div>
+    </a>
   </div>
 {% endfor %}
 
